@@ -1,0 +1,248 @@
+.hire-trainers-page {
+  min-height: calc(100vh - 80px);
+}
+
+.ht-container {
+  display: flex;
+  min-height: calc(100vh - 80px);
+}
+
+/* Left Panel */
+.ht-left-panel {
+  flex: 1;
+  background-color: var(--bg-dark);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+}
+
+.ht-left-content {
+  position: relative;
+  z-index: 10;
+  max-width: 500px;
+}
+
+.ht-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.text-white { color: white; }
+
+.ht-desc {
+  font-size: 1.125rem;
+  color: #cbd5e1;
+}
+
+.ht-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ht-feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ht-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ht-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 50%);
+  z-index: 1;
+}
+
+/* Right Panel */
+.ht-right-panel {
+  flex: 1.2;
+  padding: 4rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
+}
+
+.ht-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ht-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.ht-form-title {
+  font-size: 2rem;
+}
+
+.step-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+.form-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 1rem;
+}
+
+.section-heading {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.flex-1 { flex: 1; }
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.input-with-icon .form-control {
+  padding-left: 2.75rem;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper .form-control {
+  appearance: none;
+  padding-right: 2.5rem;
+}
+
+.select-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.ht-form-footer {
+  margin-top: 1rem;
+}
+
+.ht-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.ht-success-state {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.ht-success-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.ht-success-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #dcfce7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ht-success-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #144542;
+}
+
+.ht-success-desc {
+  margin-bottom: 2.5rem;
+  font-size: 1.125rem;
+  color: var(--text-muted);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .ht-container { flex-direction: column; }
+  .ht-left-panel, .ht-right-panel { flex: none; width: 100%; }
+  .ht-left-panel { 
+    position: relative; 
+    height: auto; 
+    min-height: auto; 
+    padding: 3rem 1.5rem; 
+  }
+  .ht-right-panel { 
+    max-height: none; 
+    overflow-y: visible; 
+    padding: 3rem 1.5rem; 
+  }
+  .form-row { flex-direction: column; gap: 0; }
+  .ht-title { font-size: 2.5rem; }
+  .ht-success-title { font-size: 2rem; }
+}
+
+@media (max-width: 640px) {
+  .ht-title { font-size: 2rem; }
+  .ht-left-panel { padding: 2.5rem 1rem; }
+  .ht-right-panel { padding: 2rem 1rem; }
+  .ht-form-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+}
