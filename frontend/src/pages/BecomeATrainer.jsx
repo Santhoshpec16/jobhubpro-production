@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import { supabase } from '../supabaseClient';
 import './BecomeATrainer.css';
+import { API_URL } from '../config';
 
 const BecomeATrainer = () => {
   const [step, setStep] = useState(1);
@@ -24,9 +25,9 @@ const BecomeATrainer = () => {
     let interval;
     if (step === 2 && formData.email) {
       interval = setInterval(async () => {
+        // change made in render api for email verification
         try {
-          const res = await fetch(`https://eloise-frizzlier-unradically.ngrok-free.dev/api/check-verification/${formData.email}`, {
-            headers: { 'ngrok-skip-browser-warning': 'true' }
+          const res = await fetch(`${API_URL}/api/check-verification/${formData.email}`, {
           });
           const data = await res.json();
           if (data.verified) {
@@ -92,10 +93,11 @@ const BecomeATrainer = () => {
       }
       setIsLoading(true);
       
+      // change made in render api for email verification
       try {
-        const response = await fetch('https://eloise-frizzlier-unradically.ngrok-free.dev/api/send-verification', {
+        const response = await fetch(`${API_URL}/api/send-verification`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
+          headers: { 'Content-Type': 'application/json'},
           body: JSON.stringify({ email: formData.email, type: 'verify' })
         });
         const data = await response.json();
@@ -177,9 +179,10 @@ const BecomeATrainer = () => {
 
         // 4. Send Confirmation Email
         try {
-          await fetch('https://eloise-frizzlier-unradically.ngrok-free.dev/api/send-confirmation', {
+          // change made in render api for email verification
+          await fetch(`${API_URL}/api/send-confirmation`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
+            headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({ email: formData.email, name: formData.name, type: 'trainer' })
           });
         } catch (e) {
