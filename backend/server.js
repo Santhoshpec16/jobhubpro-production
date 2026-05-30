@@ -21,13 +21,31 @@ const pendingVerifications = new Map();
 //   }
 // });
 
+// const transporter = nodemailer.createTransport({
+//   host: 'smtp.gmail.com',
+//   port: 587,
+//   secure: false,
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS
+//   }
+// });
+
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
+  host: 'smtp-relay.brevo.com',
   port: 587,
   secure: false,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
+    user: process.env.BREVO_SMTP_LOGIN,
+    pass: process.env.BREVO_SMTP_PASSWORD
+  }
+});
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log("SMTP ERROR:", error);
+  } else {
+    console.log("SMTP READY");
   }
 });
 
@@ -44,8 +62,9 @@ app.post('/api/send-verification', async (req, res) => {
     const verificationLink = `${process.env.BACKEND_URL}/api/verify?token=${token}`;
     pendingVerifications.set(email, { token, verified: false });
 
+    // 1 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: `"Job Hub Pro" <${process.env.SENDER_EMAIL}>`,
       to: email,
       subject: isReset ? 'Reset your Interview App Password' : 'Verify your Job Hub Pro Account',
       html: `
@@ -169,8 +188,9 @@ app.post('/api/send-confirmation', async (req, res) => {
       </html>
     `;
 
+    // 2
     const mailOptions = {
-      from: `"Job Hub Pro" <${process.env.EMAIL_USER}>`,
+      from: `"Job Hub Pro" <${process.env.SENDER_EMAIL}>`,
       to: email,
       subject: subjectText,
       html: htmlContent
