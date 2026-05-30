@@ -31,8 +31,7 @@ app.post('/api/send-verification', async (req, res) => {
   try {
     const isReset = type === 'reset';
     const token = crypto.randomBytes(32).toString('hex');
-    const verificationLink = `https://eloise-frizzlier-unradically.ngrok-free.dev/api/verify?token=${token}`;
-
+    const verificationLink = `${process.env.BACKEND_URL}/api/verify?token=${token}`;
     pendingVerifications.set(email, { token, verified: false });
 
     const mailOptions = {
@@ -173,6 +172,13 @@ app.post('/api/send-confirmation', async (req, res) => {
     console.error('Error sending confirmation email:', error);
     res.status(500).json({ error: 'Failed to send confirmation email' });
   }
+});
+
+app.get('/', (req, res) => {
+  res.json({
+    status: 'running',
+    service: 'jobhubpro-backend'
+  });
 });
 
 const PORT = process.env.PORT || 5000;
