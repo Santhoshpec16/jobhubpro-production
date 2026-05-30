@@ -1,14 +1,14 @@
-.hire-trainers-page {
+.recruit-talent-page {
   min-height: calc(100vh - 80px);
 }
 
-.ht-container {
+.rt-container {
   display: flex;
   min-height: calc(100vh - 80px);
 }
 
 /* Left Panel */
-.ht-left-panel {
+.rt-left-panel {
   flex: 1;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   display: flex;
@@ -18,13 +18,23 @@
   position: relative;
 }
 
-.ht-left-content {
+.rt-left-content {
   position: relative;
   z-index: 10;
   max-width: 500px;
 }
 
-.ht-title {
+.rt-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.rt-title {
   font-size: 3rem;
   line-height: 1.15;
   margin-bottom: 1.5rem;
@@ -32,28 +42,46 @@
   letter-spacing: -0.5px;
 }
 
+.rt-hook {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+
 .text-white { color: white; }
 
-.ht-desc {
+.rt-desc {
   font-size: 1.05rem;
   color: #cbd5e1;
   line-height: 1.6;
 }
 
-.ht-features {
+.rt-features {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
   margin-top: 2rem;
 }
 
-.ht-feature {
+.rt-feature {
   display: flex;
   align-items: center;
   gap: 1.25rem;
 }
 
-.ht-icon-wrapper {
+.rt-feature-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.rt-feature-text {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.rt-icon-wrapper {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -66,13 +94,13 @@
   transition: all 0.3s ease;
 }
 
-.ht-feature:hover .ht-icon-wrapper {
+.rt-feature:hover .rt-icon-wrapper {
   background-color: rgba(249, 115, 22, 0.15);
   border-color: rgba(249, 115, 22, 0.3);
   transform: translateY(-2px);
 }
 
-.ht-overlay {
+.rt-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -84,12 +112,12 @@
 }
 
 /* Right Panel */
-.ht-right-panel {
+.rt-right-panel {
   flex: 1.2;
   padding: 4rem;
 }
 
-.ht-form-wrapper {
+.rt-form-wrapper {
   max-width: 600px;
   margin: 0 auto;
 }
@@ -168,24 +196,6 @@
   padding-left: 2.75rem;
 }
 
-.select-wrapper {
-  position: relative;
-}
-
-.select-wrapper .form-control {
-  appearance: none;
-  padding-right: 2.5rem;
-}
-
-.select-icon {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  pointer-events: none;
-}
-
 textarea.form-control {
   resize: vertical;
   min-height: 120px;
@@ -214,18 +224,18 @@ textarea.form-control {
   margin-left: auto;
 }
 
-.ht-success-state {
+.rt-success-state {
   text-align: center;
   padding: 4rem 0;
 }
 
-.ht-success-icon-wrapper {
+.rt-success-icon-wrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
 }
 
-.ht-success-circle {
+.rt-success-circle {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -235,47 +245,38 @@ textarea.form-control {
   justify-content: center;
 }
 
-.ht-success-title {
+.rt-success-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #144542;
 }
 
-.ht-success-desc {
+.rt-success-desc {
   margin-bottom: 2.5rem;
   font-size: 1.125rem;
   color: var(--text-muted);
 }
 
-.badge {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-full);
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-}
-
 @media (max-width: 1024px) {
-  .ht-container { flex-direction: column; }
-  .ht-left-panel, .ht-right-panel { flex: none; width: 100%; }
-  .ht-left-panel { 
+  .rt-container { flex-direction: column; }
+  .rt-left-panel, .rt-right-panel { flex: none; width: 100%; }
+  .rt-left-panel { 
     position: relative; 
     height: auto; 
     min-height: auto; 
     padding: 3rem 1.5rem; 
   }
-  .ht-right-panel { 
+  .rt-right-panel { 
     max-height: none; 
     overflow-y: visible; 
     padding: 3rem 1.5rem; 
   }
-  .ht-title { font-size: 2.5rem; }
-  .ht-success-title { font-size: 2rem; }
+  .rt-title { font-size: 2.5rem; }
+  .rt-success-title { font-size: 2rem; }
 }
 
 @media (max-width: 640px) {
-  .ht-title { font-size: 2rem; }
-  .ht-left-panel { padding: 2.5rem 1rem; }
-  .ht-right-panel { padding: 2rem 1rem; }
+  .rt-title { font-size: 2rem; }
+  .rt-left-panel { padding: 2.5rem 1rem; }
+  .rt-right-panel { padding: 2rem 1rem; }
 }

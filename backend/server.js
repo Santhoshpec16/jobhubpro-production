@@ -133,6 +133,9 @@ app.post('/api/send-confirmation', async (req, res) => {
     if (type === 'hire') {
       subjectText = "Request Received - Job Hub Pro Enterprise Training";
       messageText = "We have successfully received your request for enterprise training solutions. Our team is currently reviewing your requirements and will reach out to you shortly to discuss the next steps.";
+    } else if (type === 'recruit') {
+      subjectText = "Requirement Received - Job Hub Pro Bespoke Recruitment";
+      messageText = "We have successfully received your request for bespoke recruitment & candidate sourcing. Our team is currently reviewing your job requirements and will get back to you shortly with qualified, job-ready talent profiles.";
     } else {
       subjectText = "Application Received - Job Hub Pro Trainer";
       messageText = "We have successfully received your Job Hub Pro Trainer application. Our recruitment team is currently reviewing your profile and experience. We will get back to you with an update on your application status very soon.";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Globe, Award, Shield, CheckCircle, MailCheck, UploadCloud, X } from 'lucide-react';
+import { Globe, Award, Shield, CheckCircle, MailCheck, UploadCloud, X, ArrowRight, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import { supabase } from '../supabaseClient';
@@ -11,15 +11,10 @@ const BecomeATrainer = () => {
     name: '',
     email: '',
     mobile: '',
-    location: '',
+    industry: '',
     domain: '',
-    experience: '',
     training_mode: '',
-    audience: [],
-    summary: '',
     resume: null,
-    certifications: [],
-    linkedin_url: '',
     confirmed: false
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -79,17 +74,7 @@ const BecomeATrainer = () => {
     const { name, files } = e.target;
     if (name === 'resume') {
       setFormData(prev => ({ ...prev, resume: files[0] }));
-    } else if (name === 'certifications') {
-      setFormData(prev => ({ ...prev, certifications: [...prev.certifications, ...Array.from(files)] }));
     }
-  };
-
-  const removeCertification = (index) => {
-    setFormData(prev => {
-      const newCerts = [...prev.certifications];
-      newCerts.splice(index, 1);
-      return { ...prev, certifications: newCerts };
-    });
   };
 
   const handleNext = async (e) => {
@@ -97,7 +82,7 @@ const BecomeATrainer = () => {
     setMessage('');
     
     if (step === 1) {
-      if (!formData.name || !formData.email || !formData.mobile || !formData.location) {
+      if (!formData.name || !formData.email || !formData.mobile) {
         setMessage('Please fill in all basic details.');
         return;
       }
@@ -126,7 +111,7 @@ const BecomeATrainer = () => {
         setMessage('Failed to send verification email. Is the server running?');
       }
     } else if (step === 3) {
-      if (!formData.domain || !formData.experience || !formData.training_mode || !formData.audience) {
+      if (!formData.industry || !formData.domain || !formData.training_mode) {
         setMessage('Please fill in all professional details.');
         return;
       }
@@ -144,7 +129,6 @@ const BecomeATrainer = () => {
       setIsLoading(true);
       
       try {
-        // 1. Upload files
         let resume_url = '';
         if (formData.resume) {
           const fileExt = formData.resume.name.split('.').pop();
@@ -156,35 +140,16 @@ const BecomeATrainer = () => {
             resume_url = data.publicUrl;
           }
         }
-
-        let certifications_urls = [];
-        for (const file of formData.certifications) {
-          const fileExt = file.name.split('.').pop();
-          const fileName = `certifications/${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
-          const { data: uploadData, error: uploadError } = await supabase.storage.from('documents').upload(fileName, file);
-          
-          if (!uploadError && uploadData) {
-            const { data } = supabase.storage.from('documents').getPublicUrl(fileName);
-            certifications_urls.push(data.publicUrl);
-          }
-        }
-
-        // 2. Insert into DB
         const { error: dbError } = await supabase
           .from('trainer_applications')
           .insert([{
             name: formData.name,
             email: formData.email,
             mobile: formData.mobile,
-            location: formData.location,
+            industry: formData.industry,
             domain: formData.domain,
-            experience: formData.experience,
             training_mode: formData.training_mode,
-            audience: formData.audience.join(', '),
-            summary: formData.summary,
-            resume_url: resume_url,
-            certifications_urls: certifications_urls,
-            linkedin_url: formData.linkedin_url
+            resume_url: resume_url
           }]);
         if (dbError) throw new Error(`Database error: ${dbError.message}`);
 
@@ -199,14 +164,10 @@ const BecomeATrainer = () => {
                 name: formData.name,
                 email: formData.email,
                 mobile: formData.mobile,
-                location: formData.location,
+                industry: formData.industry,
                 domain: formData.domain,
-                experience: formData.experience,
                 training_mode: formData.training_mode,
-                audience: formData.audience.join(', '),
-                summary: formData.summary,
-                resume_url: resume_url,
-                linkedin_url: formData.linkedin_url
+                resume_url: resume_url
               })
             });
           } catch (e) {
@@ -237,9 +198,8 @@ const BecomeATrainer = () => {
   const handleReset = () => {
     setStep(1);
     setFormData({
-      name: '', email: '', mobile: '', location: '', domain: '', experience: '',
-      training_mode: '', audience: '', summary: '', resume: null, certifications: [],
-      linkedin_url: '', confirmed: false
+      name: '', email: '', mobile: '', industry: '', domain: '',
+      training_mode: '', resume: null, confirmed: false
     });
   };
 
@@ -254,46 +214,44 @@ const BecomeATrainer = () => {
     }
   };
 
-  const domains = [
-    "Software Development", "AI & Data Science", "Cloud Computing", "Cybersecurity", 
-    "UI/UX Design", "Digital Marketing", "Finance", "HR & Soft Skills", "Sales", "Leadership", "Other"
-  ];
-  
-  const experiences = ["0–2 Years", "3–5 Years", "6–10 Years", "10+ Years"];
+
 
   return (
-    <div className="registration-page bg-light">
-      <div className="container reg-container">
-        <div className="reg-card">
-          {/* Left Panel */}
-          <div className="reg-info">
-            <span className="badge text-primary bg-secondary" style={{ backgroundColor: '#ffedd5' }}>Now Recruiting for Q3</span>
-            <h1 className="reg-title">
+    <div className="registration-page">
+      <div className="reg-container">
+        {/* Left Panel */}
+        <div className="reg-info">
+          <div className="reg-left-content animate-fade-in">
+            <span className="badge text-primary bg-secondary" style={{ backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+              Now Recruiting for Q3
+            </span>
+            <h1 className="reg-title text-white">
               Start Your Journey as a <span className="text-primary">JobHubPro Trainer</span>
             </h1>
-            <p className="reg-desc text-muted mb-8">
+            <p className="reg-desc mb-8">
               Join the elite group of trainers shaping the future of AI-powered workforce intelligence.
             </p>
 
             <div className="reg-features mb-8">
               <div className="reg-feature">
-                <div className="feature-icon text-primary"><Globe size={20} /></div>
-                <p>Join our global certified trainer ecosystem</p>
+                <div className="reg-icon-wrapper"><Globe size={20} className="text-primary" /></div>
+                <span className="text-white font-bold">Join our global certified trainer ecosystem</span>
               </div>
               <div className="reg-feature">
-                <div className="feature-icon text-primary"><Award size={20} /></div>
-                <p>Access exclusive high-value freelance opportunities</p>
+                <div className="reg-icon-wrapper"><Award size={20} className="text-primary" /></div>
+                <span className="text-white font-bold">Access exclusive high-value freelance opportunities</span>
               </div>
               <div className="reg-feature">
-                <div className="feature-icon text-primary"><Shield size={20} /></div>
-                <p>Verified credentials and secure payments</p>
+                <div className="reg-icon-wrapper"><Shield size={20} className="text-primary" /></div>
+                <span className="text-white font-bold">Verified credentials and secure payments</span>
               </div>
             </div>
           </div>
+          <div className="reg-overlay"></div>
+        </div>
 
-          {/* Right Panel */}
-          <div className="reg-form-panel">
-            {step < 5 && (
+        <div className="reg-form-panel bg-white">
+            {step > 0 && step < 5 && (
               <div className="form-header">
                 <div className="step-indicator">
                   <span className="step-text text-primary font-bold">STEP {step > 2 ? step - 1 : step} OF 3</span>
@@ -305,7 +263,60 @@ const BecomeATrainer = () => {
               </div>
             )}
 
-            <div className="form-content" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: step === 5 ? 'center' : 'flex-start' }}>
+            <div className="form-content" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: (step === 5 || step === 0) ? 'center' : 'flex-start' }}>
+              
+              {/* STEP 0: Registration Options */}
+              {step === 0 && (
+                <div className="registration-options" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                    <h2 style={{ fontSize: '2rem', color: '#0f172a', marginBottom: '0.5rem' }}>Choose Your Path</h2>
+                    <p style={{ color: '#64748b', fontSize: '1.1rem' }}>Select the option that best describes your current expertise and goals.</p>
+                  </div>
+                  
+                  <div 
+                    className="option-card stylish-card" 
+                    onClick={() => setStep(1)}
+                    style={{ padding: '2rem', borderRadius: '16px', cursor: 'pointer', transition: 'all 0.3s ease', background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)', border: '1px solid #bae6fd', position: 'relative', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03)' }}
+                    onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)'; e.currentTarget.style.borderColor = '#38bdf8'; }}
+                    onMouseOut={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03)'; e.currentTarget.style.borderColor = '#bae6fd'; }}
+                  >
+                    <div style={{ position: 'absolute', top: '-10px', right: '-10px', opacity: 0.1, transform: 'scale(1.5)' }}><Globe size={100} /></div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', position: 'relative', zIndex: 1 }}>
+                      <div style={{ backgroundColor: '#0ea5e9', color: 'white', padding: '1rem', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Zap size={28} />
+                      </div>
+                      <div style={{ flex: 1 }}>
+                        <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#0f172a', fontWeight: 'bold' }}>Tie Up as a Skilled Trainer</h3>
+                        <p style={{ color: '#334155', fontSize: '1.05rem', lineHeight: '1.5', marginBottom: '1rem' }}>If you are already a skilled trainer with proven experience, join our elite ecosystem to access premium freelance opportunities.</p>
+                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#0ea5e9', fontWeight: 'bold' }}>
+                          Start Application <ArrowRight size={18} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div 
+                    className="option-card stylish-card"
+                    style={{ padding: '2rem', borderRadius: '16px', cursor: 'pointer', transition: 'all 0.3s ease', background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)', border: '1px solid #fde68a', position: 'relative', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03)' }}
+                    onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)'; e.currentTarget.style.borderColor = '#fbbf24'; }}
+                    onMouseOut={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03)'; e.currentTarget.style.borderColor = '#fde68a'; }}
+                  >
+                    <div style={{ position: 'absolute', top: '-10px', right: '-10px', opacity: 0.1, transform: 'scale(1.5)' }}><Award size={100} /></div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', position: 'relative', zIndex: 1 }}>
+                      <div style={{ backgroundColor: '#f59e0b', color: 'white', padding: '1rem', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Award size={28} />
+                      </div>
+                      <div style={{ flex: 1 }}>
+                        <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#0f172a', fontWeight: 'bold' }}>Enroll in TTT Certification</h3>
+                        <p style={{ color: '#334155', fontSize: '1.05rem', lineHeight: '1.5', marginBottom: '1rem' }}>If you are an expert in any domain/technology, join our TTT certification program to become an internationally certified trainer and join our freelance pool.</p>
+                        <Link to="/ttt-certification" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#d97706', fontWeight: 'bold', textDecoration: 'none' }}>
+                          Click here to enroll <ArrowRight size={18} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
               
               {/* STEP 1 */}
               {step === 1 && (
@@ -327,12 +338,9 @@ const BecomeATrainer = () => {
                       <label>Mobile Number</label>
                       <input type="tel" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="10-digit number" className="form-control" maxLength="10" required />
                     </div>
-                    <div className="form-group">
-                      <label>Current Location</label>
-                      <input type="text" name="location" value={formData.location} onChange={handleChange} placeholder="City, Country" className="form-control" required />
-                    </div>
 
                     <div className="form-footer">
+                      <Button type="button" variant="outline" onClick={() => setStep(0)} style={{ marginRight: '1rem' }}>Back</Button>
                       <Button type="submit" className="continue-btn" disabled={isLoading} icon={<span>→</span>} iconPosition="right">
                         {isLoading ? 'Sending Link...' : 'Verify Email'}
                       </Button>
@@ -367,18 +375,12 @@ const BecomeATrainer = () => {
                   <form className="reg-form" onSubmit={handleNext}>
                     {message && <div className="error-alert">{message}</div>}
                     <div className="form-group">
-                      <label>Primary Expertise Domain</label>
-                      <select name="domain" value={formData.domain} onChange={handleChange} className="form-control" required>
-                        <option value="">Select Domain</option>
-                        {domains.map(d => <option key={d} value={d}>{d}</option>)}
-                      </select>
+                      <label>Industry</label>
+                      <input type="text" name="industry" value={formData.industry} onChange={handleChange} className="form-control" placeholder="e.g. IT, Healthcare" required />
                     </div>
                     <div className="form-group">
-                      <label>Years of Experience</label>
-                      <select name="experience" value={formData.experience} onChange={handleChange} className="form-control" required>
-                        <option value="">Select Experience</option>
-                        {experiences.map(e => <option key={e} value={e}>{e}</option>)}
-                      </select>
+                      <label>Topic or Domain</label>
+                      <input type="text" name="domain" value={formData.domain} onChange={handleChange} className="form-control" placeholder="e.g. React, Leadership" required />
                     </div>
                     <div className="form-group">
                       <label>Preferred Training Mode</label>
@@ -387,19 +389,6 @@ const BecomeATrainer = () => {
                         <label><input type="radio" name="training_mode" value="Offline" onChange={handleChange} required /> Offline</label>
                         <label><input type="radio" name="training_mode" value="Hybrid" onChange={handleChange} required /> Hybrid</label>
                       </div>
-                    </div>
-                    <div className="form-group">
-                      <label>Preferred Audience</label>
-                      <div className="radio-group">
-                        <label><input type="checkbox" name="audience" value="Corporate" checked={formData.audience.includes('Corporate')} onChange={handleChange} /> Corporate</label>
-                        <label><input type="checkbox" name="audience" value="Colleges" checked={formData.audience.includes('Colleges')} onChange={handleChange} /> Colleges</label>
-                        <label><input type="checkbox" name="audience" value="Students" checked={formData.audience.includes('Students')} onChange={handleChange} /> Students</label>
-                        <label><input type="checkbox" name="audience" value="Mixed" checked={formData.audience.includes('Mixed')} onChange={handleChange} /> Mixed</label>
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <label>Short Professional Summary</label>
-                      <textarea name="summary" value={formData.summary} onChange={handleChange} className="form-control" rows="3" placeholder="Briefly describe your training style and key achievements..."></textarea>
                     </div>
 
                     <div className="form-footer">
@@ -428,32 +417,6 @@ const BecomeATrainer = () => {
                           <span>{formData.resume ? formData.resume.name : 'Click to browse or drag file here'}</span>
                         </label>
                       </div>
-                    </div>
-
-                    <div className="form-group">
-                      <label>Upload Certifications <span className="text-muted">(Multiple PDFs/JPGs)</span></label>
-                      <div className="file-upload-wrapper">
-                        <input type="file" name="certifications" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple onChange={handleFileChange} id="certs-upload" className="file-input" />
-                        <label htmlFor="certs-upload" className="file-label">
-                          <UploadCloud size={24} className="text-primary mb-2" />
-                          <span>Click to upload certificates</span>
-                        </label>
-                      </div>
-                      {formData.certifications.length > 0 && (
-                        <div className="selected-files">
-                          {formData.certifications.map((file, i) => (
-                            <div key={i} className="file-chip">
-                              <span className="truncate">{file.name}</span>
-                              <button type="button" onClick={() => removeCertification(i)}><X size={14} /></button>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="form-group">
-                      <label>LinkedIn Profile URL (Optional)</label>
-                      <input type="url" name="linkedin_url" value={formData.linkedin_url} onChange={handleChange} placeholder="https://linkedin.com/in/username" className="form-control" />
                     </div>
 
                     <div className="form-group checkbox-group" style={{ marginTop: '2rem' }}>
@@ -492,7 +455,6 @@ const BecomeATrainer = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
