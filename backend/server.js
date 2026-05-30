@@ -1,5 +1,5 @@
 import express from 'express';
-import nodemailer from 'nodemailer';
+
 import cors from 'cors';
 import dotenv from 'dotenv';
 import crypto from 'crypto';
@@ -31,23 +31,6 @@ const pendingVerifications = new Map();
 //   }
 // });
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp-relay.brevo.com',
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.BREVO_SMTP_LOGIN,
-    pass: process.env.BREVO_SMTP_PASSWORD
-  }
-});
-
-transporter.verify((error, success) => {
-  if (error) {
-    console.log("SMTP ERROR:", error);
-  } else {
-    console.log("SMTP READY");
-  }
-});
 
 app.post('/api/send-verification', async (req, res) => {
   const { email, type } = req.body;
@@ -89,7 +72,38 @@ app.post('/api/send-verification', async (req, res) => {
       `
     };
 
-    await transporter.sendMail(mailOptions);
+    const brevoResponse = await fetch(
+  'https://api.brevo.com/v3/smtp/email',
+  {
+    method: 'POST',
+    headers: {
+      'accept': 'application/json',
+      'api-key': process.env.BREVO_API_KEY,
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      sender: {
+        name: 'Job Hub Pro',
+        email: process.env.SENDER_EMAIL
+      },
+      to: [
+        {
+          email: email
+        }
+      ],
+      subject: mailOptions.subject,
+      htmlContent: mailOptions.html
+    })
+  }
+);
+
+const brevoData = await brevoResponse.json();
+
+console.log('Brevo Response:', brevoData);
+
+if (!brevoResponse.ok) {
+  throw new Error(JSON.stringify(brevoData));
+}
     res.json({ success: true, message: isReset ? 'Reset password email sent' : 'Verification email sent' });
   } catch (error) {
     console.error('Error sending email:', error);
@@ -196,7 +210,38 @@ app.post('/api/send-confirmation', async (req, res) => {
       html: htmlContent
     };
 
-    await transporter.sendMail(mailOptions);
+   const brevoResponse = await fetch(
+  'https://api.brevo.com/v3/smtp/email',
+  {
+    method: 'POST',
+    headers: {
+      'accept': 'application/json',
+      'api-key': process.env.BREVO_API_KEY,
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      sender: {
+        name: 'Job Hub Pro',
+        email: process.env.SENDER_EMAIL
+      },
+      to: [
+        {
+          email: email
+        }
+      ],
+      subject: mailOptions.subject,
+      htmlContent: mailOptions.html
+    })
+  }
+);
+
+const brevoData = await brevoResponse.json();
+
+console.log('Brevo Response:', brevoData);
+
+if (!brevoResponse.ok) {
+  throw new Error(JSON.stringify(brevoData));
+}
     res.json({ success: true, message: 'Confirmation email sent successfully' });
   } catch (error) {
     console.error('Error sending confirmation email:', error);
