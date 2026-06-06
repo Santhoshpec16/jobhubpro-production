@@ -86,13 +86,21 @@ const Home = () => {
             </div>
 
             {/* Card 2 */}
+            {/* updated the content in paragraph tag  */}
             <div className="solution-card premium-card">
               <div className="card-top">
                 <span className="small-tag text-primary">Talent Sourcing</span>
                 <h3 className="card-title-lg">Talent Empowerment & Sourcing</h3>
               </div>
               <p className="card-description-text text-muted">
-                We don’t just source candidates — we help businesses discover workforce-ready talent. Our talent empowerment model combines AI-enabled screening with expert-driven mentoring and evaluation processes to help organizations identify technically capable and professionally aligned candidates before they reach the final hiring stage.
+                  Are you hiring? If you're an employer and would like to discuss your hiring needs, click the <strong>Recruit Talent</strong> button below and fill in the form. We will call you back, or you can call us on{" "}
+                  <a
+                    href="tel:+918870006308"
+                    className="text-primary font-semibold hover:underline"
+                  >
+                    +91-8870006308
+                  </a>{" "}
+                  to speak to our sales representative.
               </p>
               <div className="card-divider"></div>
               <h4 className="list-heading">Benefits</h4>
@@ -123,7 +131,7 @@ const Home = () => {
               <div className="card-divider"></div>
               <h4 className="list-heading">Highlights</h4>
               <ul className="card-list">
-                <li><Users size={16} className="text-primary icon-list-bullet" /> Verified Trainer Network</li>
+                <li><Users size={16} className="text-primary icon-list-bullet" /> Verified and Certified Trainer Network</li>
                 <li><Briefcase size={16} className="text-primary icon-list-bullet" /> Flexible Engagement Models</li>
                 <li><Globe size={16} className="text-primary icon-list-bullet" /> Online & Offline Training</li>
                 <li><Award size={16} className="text-primary icon-list-bullet" /> Corporate Upskilling Support</li>
@@ -247,7 +255,8 @@ const Home = () => {
                 </div>
               </div>
               <div className="banner-actions">
-                <a href="https://chat.whatsapp.com/your-community-link" target="_blank" rel="noopener noreferrer" className="community-btn-link">
+                {/* Added the original community link */}
+                <a href="https://chat.whatsapp.com/IJU8PHmtyxwKrRixnFD95S" target="_blank" rel="noopener noreferrer" className="community-btn-link">
                   <Button size="lg" className="community-btn group" icon={<ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />} iconPosition="right">
                     Join WhatsApp Community
                   </Button>
