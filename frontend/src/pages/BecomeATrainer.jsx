@@ -225,9 +225,9 @@ const BecomeATrainer = () => {
         {/* Left Panel */}
         <div className="reg-info">
           <div className="reg-left-content animate-fade-in">
-            <span className="badge text-primary bg-secondary" style={{ backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+            {/* <span className="badge text-primary bg-secondary" style={{ backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
               Now Recruiting for Q3
-            </span>
+            </span> */}
             <h1 className="reg-title text-white">
               Start Your Journey as a <span className="text-primary">JobHubPro Trainer</span>
             </h1>
