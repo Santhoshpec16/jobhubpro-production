@@ -175,9 +175,9 @@ app.post('/api/send-confirmation', async (req, res) => {
     if (type === 'hire') {
       subjectText = "Request Received - Blaze Tech Solutions Enterprise Training";
       messageText = "We have successfully received your request for enterprise training solutions. Our team is currently reviewing your requirements and will reach out to you shortly to discuss the next steps.";
-    } else if (type === 'recruit') {
-      subjectText = "Requirement Received - Blaze Tech Solutions Bespoke Recruitment";
-      messageText = "We have successfully received your request for bespoke recruitment & candidate sourcing. Our team is currently reviewing your job requirements and will get back to you shortly with qualified, job-ready talent profiles.";
+    } else if (type === 'contact') {
+      subjectText = "Enquiry Received - Blaze Tech Solutions";
+      messageText = "Thank you for reaching out to Blaze Tech Solutions. We have received your enquiry regarding our enterprise services. Our team is reviewing your requirements and will contact you within 24 hours.";
     } else {
       subjectText = "Application Received - Blaze Tech Solutions Trainer";
       messageText = "We have successfully received your Blaze Tech Solutions Trainer application. Our recruitment team is currently reviewing your profile and experience. We will get back to you with an update on your application status very soon.";

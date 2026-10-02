@@ -74,12 +74,12 @@ const Footer = () => {
             <div className="footer-col">
               <h4 className="footer-heading">Connect</h4>
               <ul className="contact-info" style={{ marginBottom: '1rem', listStyle: 'none', padding: 0 }}>
-                <li>Email: <a href="mailto:support@blazetechsolutions.com">support@blazetechsolutions.com</a></li>
+                <li>Email: <a href="mailto:support@blazetechsolutions.in">support@blazetechsolutions.in</a></li>
                 <li>WhatsApp: <a href="https://wa.me/918870006308">+91 8870006308</a></li>
               </ul>
               <div className="social-links" style={{ display: 'flex', gap: '1rem' }}>
-                <a href="https://www.linkedin.com/company/blaze-tech-solutions" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
-                <a href="https://www.instagram.com/blazetechsolutions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon size={20} /></a>
+                <a href="https://www.linkedin.com/in/blaze-tech-solutions-6505b140a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
+                <a href="https://www.instagram.com/jobhub.pro?stkn=MW81ZXI5MDRnemhqNQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon size={20} /></a>
               </div>
             </div>
           </div>

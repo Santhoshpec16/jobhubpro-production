@@ -36,14 +36,38 @@
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 .nav-link {
   font-weight: 500;
   color: var(--text-dark);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   position: relative;
+  white-space: nowrap;
+}
+
+.btn-nav-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  background-color: #0047ab;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 71, 171, 0.25);
+  white-space: nowrap;
+  margin-left: 1.5rem;
+}
+
+.btn-nav-contact:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 71, 171, 0.35);
 }
 
 .nav-link.active {

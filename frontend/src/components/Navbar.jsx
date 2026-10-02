@@ -11,15 +11,9 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Intervista AI', path: '/intervista-ai' },
-    { name: 'L&D Partnership', path: '/#ld-partnership' },
-    { 
-      name: 'For Enterprises', 
-      path: '#',
-      dropdown: [
-        { name: 'Talent Empowerment & Sourcing', path: '/recruit-talent' },
-        { name: 'On-Demand Trainer Marketplace', path: '/hire-trainers' }
-      ]
-    },
+    { name: 'Training Solutions', path: '/training-solutions' },
+    { name: 'Financial Services', path: '/financial-services' },
+    { name: 'Talent Acquisition & Recruitment', path: '/talent-acquisition' },
     { name: 'Trainer Ecosystem', path: '/#trainer-community' }
   ];
 
@@ -103,9 +97,14 @@ const Navbar = () => {
           })}
         </div>
 
-        <button className="mobile-menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="navbar-actions" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <Link to="/contact-us" className="btn-nav-contact" onClick={() => setIsMenuOpen(false)}>
+            Contact Us
+          </Link>
+          <button className="mobile-menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
     </nav>
   );
