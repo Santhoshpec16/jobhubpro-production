@@ -31,7 +31,7 @@
   font-size: 0.875rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  border: 1px solid rgba(249, 115, 22, 0.3);
+  border: 1px solid rgba(0, 71, 171, 0.3);
 }
 
 .rt-title {
@@ -95,8 +95,8 @@
 }
 
 .rt-feature:hover .rt-icon-wrapper {
-  background-color: rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.3);
+  background-color: rgba(0, 71, 171, 0.15);
+  border-color: rgba(0, 71, 171, 0.3);
   transform: translateY(-2px);
 }
 
@@ -106,7 +106,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.12) 0%, transparent 50%),
+  background: radial-gradient(circle at 80% 20%, rgba(0, 71, 171, 0.15) 0%, transparent 50%),
               radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
   z-index: 1;
 }
@@ -177,7 +177,7 @@
 
 .form-control:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.15);
 }
 
 .input-with-icon {

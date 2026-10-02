@@ -425,7 +425,7 @@ const HireTrainers = () => {
                       <div className="form-group checkbox-group" style={{ marginTop: '2rem', marginBottom: '2rem' }}>
                         <label style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', cursor: 'pointer', fontWeight: 'normal' }}>
                           <input type="checkbox" name="confirmed" checked={formData.confirmed} onChange={handleChange} style={{ marginTop: '0.25rem', width: '18px', height: '18px' }} />
-                          <span style={{ color: '#475569' }}>I confirm that the provided requirement details are accurate and I authorize Job Hub Pro to process this request.</span>
+                          <span style={{ color: '#475569' }}>I confirm that the provided requirement details are accurate and I authorize Blaze Tech Solutions to process this request.</span>
                         </label>
                       </div>
 

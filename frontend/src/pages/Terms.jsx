@@ -11,7 +11,7 @@ const Terms = () => {
 
           <section className="terms-section">
             <h2>1. Scope of Services</h2>
-            <p>Job Hub Pro provides intelligent workforce solutions, connecting certified trainers, organizations, and job seekers through our AI-driven platform. Our services include trainer empanelment, enterprise training matchmaking, and the Intervista AI platform for interview assessment.</p>
+            <p>Blaze Tech Solutions provides intelligent workforce solutions, connecting certified trainers, organizations, and job seekers through our AI-driven platform. Our services include trainer empanelment, enterprise training matchmaking, and the Intervista AI platform for interview assessment.</p>
           </section>
 
           <section className="terms-section">
@@ -21,7 +21,7 @@ const Terms = () => {
 
           <section className="terms-section">
             <h2>3. Terms for Job Seekers</h2>
-            <p>Job seekers may use our platform to take AI-driven assessments and apply for roles. Job Hub Pro does not guarantee employment or specific outcomes from using our tools or assessments.</p>
+            <p>Job seekers may use our platform to take AI-driven assessments and apply for roles. Blaze Tech Solutions does not guarantee employment or specific outcomes from using our tools or assessments.</p>
           </section>
 
           <section className="terms-section">
@@ -36,7 +36,7 @@ const Terms = () => {
 
           <section className="terms-section">
             <h2>6. Intellectual Property Rights</h2>
-            <p>All content, branding, trademarks, algorithms, and software on Job Hub Pro are the exclusive property of Job Hub Pro. Users may not copy, modify, or distribute any of our intellectual property without prior written consent.</p>
+            <p>All content, branding, trademarks, algorithms, and software on Blaze Tech Solutions are the exclusive property of Blaze Tech Solutions. Users may not copy, modify, or distribute any of our intellectual property without prior written consent.</p>
           </section>
 
           <section className="terms-section">
@@ -46,7 +46,7 @@ const Terms = () => {
 
           <section className="terms-section">
             <h2>8. Limitation of Liability</h2>
-            <p>Job Hub Pro provides the platform on an "as is" basis. We shall not be liable for any indirect, incidental, or consequential damages resulting from your use of the platform, training engagements, or hiring decisions.</p>
+            <p>Blaze Tech Solutions provides the platform on an "as is" basis. We shall not be liable for any indirect, incidental, or consequential damages resulting from your use of the platform, training engagements, or hiring decisions.</p>
           </section>
 
           <section className="terms-section">
@@ -56,19 +56,19 @@ const Terms = () => {
 
           <section className="terms-section">
             <h2>10. Governing Law</h2>
-            <p>These terms shall be governed by and construed in accordance with the laws of the jurisdiction in which Job Hub Pro operates, without regard to its conflict of law provisions.</p>
+            <p>These terms shall be governed by and construed in accordance with the laws of the jurisdiction in which Blaze Tech Solutions operates, without regard to its conflict of law provisions.</p>
           </section>
 
           <section className="terms-section">
             <h2>11. Changes to Terms</h2>
-            <p>Job Hub Pro reserves the right to update or modify these Terms and Conditions at any time. We will notify users of significant changes, and continued use of the platform implies acceptance of the updated terms.</p>
+            <p>Blaze Tech Solutions reserves the right to update or modify these Terms and Conditions at any time. We will notify users of significant changes, and continued use of the platform implies acceptance of the updated terms.</p>
           </section>
 
           <section className="terms-section">
             <h2>12. Contact Information</h2>
             <p>If you have any questions regarding these Terms, please contact us:</p>
             <ul>
-              <li><strong>Email:</strong> support@jobhubpro.in</li>
+              <li><strong>Email:</strong> support@blazetechsolutions.com</li>
               <li><strong>WhatsApp:</strong> +91 8870006308</li>
             </ul>
           </section>

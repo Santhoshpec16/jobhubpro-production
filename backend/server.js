@@ -47,9 +47,9 @@ app.post('/api/send-verification', async (req, res) => {
 
     // 1 
     const mailOptions = {
-      from: `"Job Hub Pro" <${process.env.SENDER_EMAIL}>`,
+      from: `"Blaze Tech Solutions" <${process.env.SENDER_EMAIL}>`,
       to: email,
-      subject: isReset ? 'Reset your Interview App Password' : 'Verify your Job Hub Pro Account',
+      subject: isReset ? 'Reset your Interview App Password' : 'Verify your Blaze Tech Solutions Account',
       html: `
         <!DOCTYPE html>
         <html>
@@ -83,7 +83,7 @@ app.post('/api/send-verification', async (req, res) => {
     },
     body: JSON.stringify({
       sender: {
-        name: 'Job Hub Pro',
+        name: 'Blaze Tech Solutions',
         email: process.env.SENDER_EMAIL
       },
       to: [
@@ -121,7 +121,7 @@ app.get('/api/verify', (req, res) => {
         <!DOCTYPE html>
         <html>
         <head>
-          <title>Email Verified - Job Hub Pro</title>
+          <title>Email Verified - Blaze Tech Solutions</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
@@ -173,14 +173,14 @@ app.post('/api/send-confirmation', async (req, res) => {
     let subjectText = '';
 
     if (type === 'hire') {
-      subjectText = "Request Received - Job Hub Pro Enterprise Training";
+      subjectText = "Request Received - Blaze Tech Solutions Enterprise Training";
       messageText = "We have successfully received your request for enterprise training solutions. Our team is currently reviewing your requirements and will reach out to you shortly to discuss the next steps.";
     } else if (type === 'recruit') {
-      subjectText = "Requirement Received - Job Hub Pro Bespoke Recruitment";
+      subjectText = "Requirement Received - Blaze Tech Solutions Bespoke Recruitment";
       messageText = "We have successfully received your request for bespoke recruitment & candidate sourcing. Our team is currently reviewing your job requirements and will get back to you shortly with qualified, job-ready talent profiles.";
     } else {
-      subjectText = "Application Received - Job Hub Pro Trainer";
-      messageText = "We have successfully received your Job Hub Pro Trainer application. Our recruitment team is currently reviewing your profile and experience. We will get back to you with an update on your application status very soon.";
+      subjectText = "Application Received - Blaze Tech Solutions Trainer";
+      messageText = "We have successfully received your Blaze Tech Solutions Trainer application. Our recruitment team is currently reviewing your profile and experience. We will get back to you with an update on your application status very soon.";
     }
 
     const htmlContent = `
@@ -196,7 +196,7 @@ app.post('/api/send-confirmation', async (req, res) => {
           <div style="width: 56px; height: 56px; background-color: #DAFF0C; border-radius: 16px; display: inline-block; text-align: center; line-height: 56px; font-size: 32px; font-weight: bold; color: #144542; margin-bottom: 24px;">✓</div>
           <h2 style="color: #144542; font-size: 28px; font-weight: 900; margin-top: 0; margin-bottom: 16px; letter-spacing: -0.5px;">Thank You, ${name}!</h2>
           <p style="color: #9B9B9B; font-size: 16px; margin-bottom: 32px; line-height: 1.6;">${messageText}</p>
-          <p style="color: #9B9B9B; font-size: 13px; margin-top: 40px; border-top: 1px solid #dce5e5; padding-top: 24px;">Best regards,<br/><strong>The Job Hub Pro Team</strong></p>
+          <p style="color: #9B9B9B; font-size: 13px; margin-top: 40px; border-top: 1px solid #dce5e5; padding-top: 24px;">Best regards,<br/><strong>The Blaze Tech Solutions Team</strong></p>
         </div>
       </body>
       </html>
@@ -204,7 +204,7 @@ app.post('/api/send-confirmation', async (req, res) => {
 
     // 2
     const mailOptions = {
-      from: `"Job Hub Pro" <${process.env.SENDER_EMAIL}>`,
+      from: `"Blaze Tech Solutions" <${process.env.SENDER_EMAIL}>`,
       to: email,
       subject: subjectText,
       html: htmlContent
@@ -221,7 +221,7 @@ app.post('/api/send-confirmation', async (req, res) => {
     },
     body: JSON.stringify({
       sender: {
-        name: 'Job Hub Pro',
+        name: 'Blaze Tech Solutions',
         email: process.env.SENDER_EMAIL
       },
       to: [
@@ -252,7 +252,7 @@ if (!brevoResponse.ok) {
 app.get('/', (req, res) => {
   res.json({
     status: 'running',
-    service: 'jobhubpro-backend'
+    service: 'blazetech-backend'
   });
 });
 

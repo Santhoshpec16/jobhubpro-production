@@ -48,7 +48,7 @@ const Footer = () => {
         <div className="footer-top">
           <div className="footer-brand">
             <Link to="/" className="footer-logo" style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-              <img src="/logo.svg" alt="Job Hub Pro Logo" style={{ height: '100px', objectFit: 'contain' }} />
+              <img src="/logo.svg" alt="Blaze Tech Solutions Logo" style={{ height: '70px', objectFit: 'contain' }} />
             </Link>
             <p className="footer-desc text-muted">
               Empowering organizations with AI-driven intelligence and certified training ecosystems.
@@ -74,12 +74,12 @@ const Footer = () => {
             <div className="footer-col">
               <h4 className="footer-heading">Connect</h4>
               <ul className="contact-info" style={{ marginBottom: '1rem', listStyle: 'none', padding: 0 }}>
-                <li>Email: <a href="mailto:support@jobhubpro.in">support@jobhubpro.in</a></li>
+                <li>Email: <a href="mailto:support@blazetechsolutions.com">support@blazetechsolutions.com</a></li>
                 <li>WhatsApp: <a href="https://wa.me/918870006308">+91 8870006308</a></li>
               </ul>
               <div className="social-links" style={{ display: 'flex', gap: '1rem' }}>
-                <a href="https://www.linkedin.com/in/job-hub-pro-ai-6505b140a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
-                <a href="https://www.instagram.com/jobhub.pro/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon size={20} /></a>
+                <a href="https://www.linkedin.com/company/blaze-tech-solutions" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
+                <a href="https://www.instagram.com/blazetechsolutions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon size={20} /></a>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ const Footer = () => {
         
         <div className="footer-bottom">
           <p className="copyright text-muted">
-            &copy; 2026 Job Hub Pro. All rights reserved.
+            &copy; 2026 Blaze Tech Solutions. All rights reserved.
           </p>
         </div>
       </div>

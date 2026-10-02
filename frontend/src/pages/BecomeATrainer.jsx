@@ -229,7 +229,7 @@ const BecomeATrainer = () => {
               Now Recruiting for Q3
             </span> */}
             <h1 className="reg-title text-white">
-              Start Your Journey as a <span className="text-primary">JobHubPro Trainer</span>
+              Start Your Journey as a <span className="text-primary">Blaze Tech Solutions Trainer</span>
             </h1>
             <p className="reg-desc mb-8">
               Join the elite group of trainers shaping the future of AI-powered workforce intelligence.

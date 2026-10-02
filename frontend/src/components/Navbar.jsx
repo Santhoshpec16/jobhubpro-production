@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className="container navbar-container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-logo" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src="/logo.svg" alt="Job Hub Pro Logo" style={{ height: '60px', objectFit: 'contain', transform: 'scale(1.6)', transformOrigin: 'left center' }} />
+            <img src="/logo.svg" alt="Blaze Tech Solutions Logo" style={{ height: '52px', objectFit: 'contain' }} />
           </Link>
         </div>
         

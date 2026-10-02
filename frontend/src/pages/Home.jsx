@@ -16,7 +16,7 @@ const Home = () => {
               Empowering Hiring, Training & <span className="text-primary">Workforce Readiness</span> Through AI.
             </h1>
             <p className="hero-subtitle text-muted">
-              Job Hub Pro connects certified trainers, organizations, HR teams, and job seekers through intelligent workforce solutions and AI-driven interview assessment.
+              Blaze Tech Solutions connects certified trainers, organizations, HR teams, and job seekers through intelligent workforce solutions and AI-driven interview assessment.
             </p>
             <div className="hero-actions">
               <Link to="/intervista-ai"><Button icon={<ArrowRight size={18} />} iconPosition="right">Explore Intervista</Button></Link>

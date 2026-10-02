@@ -1,7 +1,7 @@
 :root {
-  --primary: #f97316;
-  --primary-hover: #ea580c;
-  --secondary: #fef3c7;
+  --primary: #0047AB;
+  --primary-hover: #0038a8;
+  --secondary: #eff6ff;
   --text-dark: #0f172a;
   --text-muted: #64748b;
   --bg-light: #f8fafc;
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Gradient text */
 .text-gradient {
-  background: linear-gradient(to right, #f97316, #fbbf24);
+  background: linear-gradient(to right, #0047AB, #2563EB);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

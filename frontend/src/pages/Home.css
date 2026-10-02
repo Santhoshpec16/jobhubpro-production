@@ -227,8 +227,8 @@
 
 .premium-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px -15px rgba(249, 115, 22, 0.12);
-  border-color: #fed7aa;
+  box-shadow: 0 20px 40px -15px rgba(0, 71, 171, 0.15);
+  border-color: #bfdbfe;
 }
 
 /* Card Top elements */
@@ -355,7 +355,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 50%);
+  background: radial-gradient(circle at 80% 20%, rgba(0, 71, 171, 0.2) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -421,12 +421,12 @@
 
 .banner-feature-item:hover {
   background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(249, 115, 22, 0.3);
+  border-color: rgba(0, 71, 171, 0.4);
   transform: translateY(-2px);
 }
 
 .banner-feature-item .feature-icon {
-  color: #fbbf24;
+  color: #60a5fa;
   flex-shrink: 0;
 }
 
@@ -446,7 +446,7 @@
 .community-btn:hover {
   background-color: var(--primary-hover) !important;
   transform: scale(1.03);
-  box-shadow: 0 10px 20px -10px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 10px 20px -10px rgba(0, 71, 171, 0.4);
 }
 
 /* RESPONSIVE DESIGN MEDIA QUERIES */
