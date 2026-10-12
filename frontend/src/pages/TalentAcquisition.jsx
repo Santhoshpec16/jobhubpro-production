@@ -94,8 +94,8 @@ const TalentAcquisition = () => {
       items: ["Construction", "Real Estate"]
     },
     {
-      title: "ITES / BPO",
-      items: ["Customer Support", "BPO"]
+      title: "BPO SECTOR",
+      items: ["Customer Support", "Voice & Non-Voice Support", "Operations"]
     },
     {
       title: "LEGAL & PROFESSIONAL",
@@ -191,7 +191,7 @@ const TalentAcquisition = () => {
                 <div className="ta-item-content">
                   <h3>BULK HIRING & MASS RECRUITMENT</h3>
                   <p>
-                    Rapid high-volume candidate evaluation and onboarding tailored for BPO/ITES companies, customer support, healthcare facilities, and financial service centers needing scalable manpower.
+                    Rapid high-volume candidate evaluation and onboarding tailored for BPO companies, customer support, healthcare facilities, and financial service centers needing scalable manpower.
                   </p>
                 </div>
               </div>
@@ -234,9 +234,8 @@ const TalentAcquisition = () => {
               <ul className="ta-types-list">
                 <li><strong>✦ IT Sector:</strong> Niche tech talent acquisition covering fresh graduates, full-stack developers, system architects, and senior tech managers.</li>
                 <li><strong>✦ College & Institutional Drives:</strong> Campus recruitment management, online proctored tests, and streamlined onboarding for freshers.</li>
-                <li><strong>✦ BPO & ITES Sector:</strong> High-speed bulk hiring for voice, non-voice, chat support, and operational processes.</li>
+                <li><strong>✦ BPO Sector:</strong> High-speed bulk hiring for voice, non-voice, chat support, and operational processes.</li>
                 <li><strong>✦ Healthcare Sector:</strong> Healthcare professionals, clinical support, medical coding, administrative, and allied medical talent.</li>
-                <li><strong>✦ Financial Sector (BFSI):</strong> Wealth managers, accounting associates, risk analysts, banking advisors, and audit professionals.</li>
               </ul>
             </div>
 

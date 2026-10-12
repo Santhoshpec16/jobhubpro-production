@@ -58,44 +58,8 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="solutions-grid animate-fade-in" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
-            {/* Card 1: Training Solutions */}
-            <div className="solution-card premium-card text-center" style={{ padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <div>
-                <span className="small-tag text-primary">Workforce Development</span>
-                <h3 className="card-title-lg mb-3" style={{ fontSize: '1.5rem', fontWeight: 800 }}>Training Solutions</h3>
-                <p className="card-description-text text-muted mb-6" style={{ fontSize: '0.95rem', lineHeight: 1.5 }}>
-                  Tailored corporate training, Campus to Corporate programs, Employability, and sector-specific skill development.
-                </p>
-              </div>
-              <div className="card-action-wrapper">
-                <Link to="/training-solutions" className="w-full">
-                  <Button className="w-full justify-center group" icon={<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />} iconPosition="right">
-                    View Training Solutions
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Card 2: Financial Services */}
-            <div className="solution-card premium-card text-center" style={{ padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <div>
-                <span className="small-tag text-primary">Financial Advisory</span>
-                <h3 className="card-title-lg mb-3" style={{ fontSize: '1.5rem', fontWeight: 800 }}>Financial Services</h3>
-                <p className="card-description-text text-muted mb-6" style={{ fontSize: '0.95rem', lineHeight: 1.5 }}>
-                  End-to-end Bookkeeping & Accounting, Virtual CFO strategic advisory, and Tax & Audit compliance.
-                </p>
-              </div>
-              <div className="card-action-wrapper">
-                <Link to="/financial-services" className="w-full">
-                  <Button className="w-full justify-center group" icon={<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />} iconPosition="right">
-                    View Financial Services
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Card 3: Talent Acquisition & Recruitment */}
+          <div className="solutions-grid animate-fade-in" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+            {/* Card 1: Talent Acquisition */}
             <div className="solution-card premium-card text-center" style={{ padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
                 <span className="small-tag text-primary">Bulk & AI Sourcing</span>
@@ -113,69 +77,39 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Card 4: Trainer Ecosystem */}
+            {/* Card 2: Training Solutions */}
             <div className="solution-card premium-card text-center" style={{ padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
-                <span className="small-tag text-primary">Trainer Network</span>
-                <h3 className="card-title-lg mb-3" style={{ fontSize: '1.5rem', fontWeight: 800 }}>Trainer Ecosystem</h3>
+                <span className="small-tag text-primary">Workforce Development</span>
+                <h3 className="card-title-lg mb-3" style={{ fontSize: '1.5rem', fontWeight: 800 }}>Training Solutions</h3>
                 <p className="card-description-text text-muted mb-6" style={{ fontSize: '0.95rem', lineHeight: 1.5 }}>
-                  Connect with verified corporate trainers, domain experts, and learning facilitators for enterprise upskilling.
+                  Tailored corporate training, Campus to Corporate programs, Employability, and sector-specific skill development.
                 </p>
               </div>
               <div className="card-action-wrapper">
-                <a href="#trainer-community" className="w-full">
+                <Link to="/training-solutions" className="w-full">
                   <Button className="w-full justify-center group" icon={<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />} iconPosition="right">
-                    Join Trainer Community
+                    View Training Solutions
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-
-
-      {/* SECTION 3 — TRAINER COMMUNITY CTA */}
-      <section id="trainer-community" className="trainer-community-section section-padding">
-        <div className="container">
-          <div className="community-banner animate-fade-in">
-            <div className="banner-content">
-              <span className="badge text-white bg-glass-badge">Trainer Ecosystem</span>
-              <h2 className="banner-title text-white">Join Our Global Trainer Community</h2>
-              <p className="banner-description text-light">
-                Become part of a growing ecosystem of trainers, facilitators, industry professionals, and learning leaders. Participate in networking opportunities, industry discussions, collaborative learning initiatives, trainer development programs, and enterprise training opportunities. Stay connected with the latest updates in corporate training, workforce transformation, and learning innovation.
-              </p>
-              <div className="banner-divider"></div>
-              <div className="banner-features-grid">
-                <div className="banner-feature-item">
-                  <Users size={20} className="feature-icon" />
-                  <span>Networking Opportunities</span>
-                </div>
-                <div className="banner-feature-item">
-                  <Handshake size={20} className="feature-icon" />
-                  <span>Training Collaborations</span>
-                </div>
-                <div className="banner-feature-item">
-                  <MessageCircle size={20} className="feature-icon" />
-                  <span>Industry Discussions</span>
-                </div>
-                <div className="banner-feature-item">
-                  <Eye size={20} className="feature-icon" />
-                  <span>Professional Visibility</span>
-                </div>
-                <div className="banner-feature-item">
-                  <BookOpen size={20} className="feature-icon" />
-                  <span>Learning Initiatives</span>
-                </div>
+            {/* Card 3: Financial Services */}
+            <div className="solution-card premium-card text-center" style={{ padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <span className="small-tag text-primary">Financial Advisory</span>
+                <h3 className="card-title-lg mb-3" style={{ fontSize: '1.5rem', fontWeight: 800 }}>Financial Services</h3>
+                <p className="card-description-text text-muted mb-6" style={{ fontSize: '0.95rem', lineHeight: 1.5 }}>
+                  End-to-end Bookkeeping & Accounting, Virtual CFO strategic advisory, and Tax & Audit compliance.
+                </p>
               </div>
-              <div className="banner-actions">
-                {/* Added the original community link */}
-                <a href="https://chat.whatsapp.com/IJU8PHmtyxwKrRixnFD95S" target="_blank" rel="noopener noreferrer" className="community-btn-link">
-                  <Button size="lg" className="community-btn group" icon={<ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />} iconPosition="right">
-                    Join WhatsApp Community
+              <div className="card-action-wrapper">
+                <Link to="/financial-services" className="w-full">
+                  <Button className="w-full justify-center group" icon={<ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />} iconPosition="right">
+                    View Financial Services
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

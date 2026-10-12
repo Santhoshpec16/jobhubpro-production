@@ -130,8 +130,18 @@ const ContactUs = () => {
                     <Phone size={22} />
                   </div>
                   <div>
-                    <span className="info-label">Call / Phone</span>
-                    <a href="tel:+918870006308" className="info-value">+91 8870006308</a>
+                    <span className="info-label">Primary Number</span>
+                    <a href="tel:+918438860377" className="info-value">+91 84388 60377</a>
+                  </div>
+                </div>
+
+                <div className="info-item">
+                  <div className="info-icon-wrapper">
+                    <Phone size={22} />
+                  </div>
+                  <div>
+                    <span className="info-label">Secondary Number</span>
+                    <a href="tel:+918870006308" className="info-value">+91 88700 06308</a>
                   </div>
                 </div>
 
@@ -141,7 +151,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <span className="info-label">WhatsApp Support</span>
-                    <a href="https://wa.me/918870006308" target="_blank" rel="noopener noreferrer" className="info-value">+91 8870006308</a>
+                    <a href="https://wa.me/918438860377" target="_blank" rel="noopener noreferrer" className="info-value">+91 84388 60377</a>
                   </div>
                 </div>
 
@@ -170,8 +180,13 @@ const ContactUs = () => {
                     <MapPin size={22} />
                   </div>
                   <div>
-                    <span className="info-label">Corporate Office</span>
-                    <span className="info-value-text">Blaze Tech Solutions Hub, India</span>
+                    <span className="info-label">Registered Address</span>
+                    <div className="info-value-text" style={{ lineHeight: '1.5', marginTop: '0.25rem' }}>
+                      <strong>INNOV8 WORKSPACES INDIA LIMITED</strong><br />
+                      FEATHERLITE, 8TH FLOOR,<br />
+                      200FT, MMRD ROAD, PALLAVARAM CHENNAI<br />
+                      TAMIL NADU - 600044
+                    </div>
                   </div>
                 </div>
               </div>
@@ -266,7 +281,7 @@ const ContactUs = () => {
                       >
                         <option value="">Select your sector...</option>
                         <option value="Information Technology (IT)">Information Technology (IT)</option>
-                        <option value="BPO / ITES">BPO / ITES</option>
+                        <option value="BPO">BPO</option>
                         <option value="Financial Services & BFSI">Financial Services & BFSI</option>
                         <option value="Healthcare & Medicine">Healthcare & Medicine</option>
                         <option value="Educational Institutions">Educational Institutions</option>

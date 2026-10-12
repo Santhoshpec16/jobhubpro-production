@@ -383,6 +383,93 @@
   line-height: 1.55;
 }
 
+/* WHO CAN BENEFIT SECTION */
+.fs-benefit-section {
+  padding: 5rem 0 3rem;
+  background-color: #f8fafc;
+}
+
+.fs-benefit-card {
+  background-color: #ffffff;
+  border-radius: 28px;
+  border: 1px solid #e2e8f0;
+  padding: 4rem 3rem;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+}
+
+.fs-benefit-main-title {
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 1rem 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.fs-benefit-sub-title {
+  font-size: 1.15rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+}
+
+.fs-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.fs-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.75rem 2rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+.fs-benefit-item:hover {
+  transform: translateY(-3px);
+  border-color: #93c5fd;
+  box-shadow: 0 10px 25px -5px rgba(0, 71, 171, 0.08);
+  background-color: #ffffff;
+}
+
+.fs-benefit-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.fs-benefit-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #0047ab;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.fs-benefit-content h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+}
+
+.fs-benefit-content p {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+  .fs-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+  .fs-benefit-card {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
 /* 3. CONTACT & ENQUIRIES SECTION */
 .fs-contact-section {
   padding: 5rem 0;

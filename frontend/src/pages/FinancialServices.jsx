@@ -333,20 +333,75 @@ const FinancialServices = () => {
         </div>
       </section>
 
-      {/* 3. CONTACT & ENQUIRIES SECTION */}
+      {/* 3. WHO CAN BENEFIT SECTION */}
+      <section className="fs-benefit-section">
+        <div className="container">
+          <div className="fs-benefit-card">
+            <div className="fs-benefit-header text-center">
+              <span className="fs-banner-tag">Target Audience</span>
+              <h2 className="fs-benefit-main-title">Who Can Benefit?</h2>
+              <p className="fs-benefit-sub-title">For Businesses — We support diverse enterprise structures with dedicated financial solutions</p>
+            </div>
+
+            <div className="fs-benefit-grid">
+              <div className="fs-benefit-item">
+                <div className="fs-benefit-bullet"></div>
+                <div className="fs-benefit-content">
+                  <h3>Startups & SMEs</h3>
+                  <p>Lean bookkeeping, scalable accounting structures, and early-stage cash-flow optimization.</p>
+                </div>
+              </div>
+
+              <div className="fs-benefit-item">
+                <div className="fs-benefit-bullet"></div>
+                <div className="fs-benefit-content">
+                  <h3>Companies</h3>
+                  <p>Private & public corporations requiring robust internal audits, MIS reporting, and Virtual CFO stewardship.</p>
+                </div>
+              </div>
+
+              <div className="fs-benefit-item">
+                <div className="fs-benefit-bullet"></div>
+                <div className="fs-benefit-content">
+                  <h3>Partnerships & LLPs</h3>
+                  <p>Streamlined partnership accounting, capital accounts maintenance, and comprehensive tax compliance.</p>
+                </div>
+              </div>
+
+              <div className="fs-benefit-item">
+                <div className="fs-benefit-bullet"></div>
+                <div className="fs-benefit-content">
+                  <h3>Professionals & Consultants</h3>
+                  <p>Hassle-free presumptive taxation, GST compliance, invoicing management, and financial planning.</p>
+                </div>
+              </div>
+
+              <div className="fs-benefit-item full-width">
+                <div className="fs-benefit-bullet"></div>
+                <div className="fs-benefit-content">
+                  <h3>Foreign-owned / Overseas Businesses with Indian Operations</h3>
+                  <p>FDI compliance, cross-border tax advisory, transfer pricing review, FEMA adherence, and local statutory bookkeeping.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. CONTACT & ENQUIRIES SECTION */}
       <section className="fs-contact-section">
         <div className="container">
           <div className="fs-contact-card text-center">
             <h2 className="fs-contact-title">Need Financial Assistance or Virtual CFO Advisory?</h2>
             <p className="fs-contact-subtitle">
-              For queries reach out at <strong>+91 8870006308</strong> or email <strong>support@blazetechsolutions.in</strong>
+              For queries reach out at <strong>+91 84388 60377</strong> / <strong>+91 88700 06308</strong> or email <strong>support@blazetechsolutions.in</strong>
             </p>
 
             <div className="fs-contact-buttons">
-              <a href="tel:+918870006308" className="fs-c-btn phone">
-                <Phone size={20} /> Call 8870006308
+              <a href="tel:+918438860377" className="fs-c-btn phone">
+                <Phone size={20} /> Call +91 84388 60377
               </a>
-              <a href="https://wa.me/918870006308" target="_blank" rel="noopener noreferrer" className="fs-c-btn whatsapp">
+              <a href="https://wa.me/918438860377" target="_blank" rel="noopener noreferrer" className="fs-c-btn whatsapp">
                 <MessageCircle size={20} /> WhatsApp Us
               </a>
               <a href="mailto:support@blazetechsolutions.in" className="fs-c-btn email">

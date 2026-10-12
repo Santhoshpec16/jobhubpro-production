@@ -52,6 +52,7 @@ function App() {
             <Route path="/financial-services" element={<FinancialServices />} />
             <Route path="/talent-acquisition" element={<TalentAcquisition />} />
             <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/contact" element={<ContactUs />} />
             <Route path="/hire-trainers" element={<TalentAcquisition />} />
             <Route path="/recruit-talent" element={<TalentAcquisition />} />
             <Route path="/ttt-certification" element={<TTTCertification />} />

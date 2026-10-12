@@ -48,7 +48,7 @@ const Footer = () => {
         <div className="footer-top">
           <div className="footer-brand">
             <Link to="/" className="footer-logo" style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-              <img src="/logo.svg" alt="Blaze Tech Solutions Logo" style={{ height: '70px', objectFit: 'contain' }} />
+              <img src="/transparent-image(1).png" alt="Blaze Tech Solutions Logo" style={{ height: '68px', objectFit: 'contain' }} />
             </Link>
             <p className="footer-desc text-muted">
               Empowering organizations with AI-driven intelligence and certified training ecosystems.
@@ -75,7 +75,9 @@ const Footer = () => {
               <h4 className="footer-heading">Connect</h4>
               <ul className="contact-info" style={{ marginBottom: '1rem', listStyle: 'none', padding: 0 }}>
                 <li>Email: <a href="mailto:support@blazetechsolutions.in">support@blazetechsolutions.in</a></li>
-                <li>WhatsApp: <a href="https://wa.me/918870006308">+91 8870006308</a></li>
+                <li>Primary: <a href="tel:+918438860377">+91 84388 60377</a></li>
+                <li>Secondary: <a href="tel:+918870006308">+91 88700 06308</a></li>
+                <li>WhatsApp: <a href="https://wa.me/918438860377">+91 84388 60377</a></li>
               </ul>
               <div className="social-links" style={{ display: 'flex', gap: '1rem' }}>
                 <a href="https://www.linkedin.com/in/blaze-tech-solutions-6505b140a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>

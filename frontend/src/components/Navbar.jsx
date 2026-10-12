@@ -13,8 +13,7 @@ const Navbar = () => {
     { name: 'Intervista AI', path: '/intervista-ai' },
     { name: 'Training Solutions', path: '/training-solutions' },
     { name: 'Financial Services', path: '/financial-services' },
-    { name: 'Talent Acquisition & Recruitment', path: '/talent-acquisition' },
-    { name: 'Trainer Ecosystem', path: '/#trainer-community' }
+    { name: 'Talent Acquisition & Recruitment', path: '/talent-acquisition' }
   ];
 
   // Auto-close dropdown when clicking outside
@@ -35,7 +34,7 @@ const Navbar = () => {
       <div className="container navbar-container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-logo" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src="/logo.svg" alt="Blaze Tech Solutions Logo" style={{ height: '52px', objectFit: 'contain' }} />
+            <img src="/transparent-image(1).png" alt="Blaze Tech Solutions Logo" style={{ height: '54px', objectFit: 'contain' }} />
           </Link>
         </div>
         

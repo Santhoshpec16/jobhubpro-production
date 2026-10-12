@@ -1,5 +1,5 @@
 import React from 'react';
-import { PlayCircle, CheckCircle2, BarChart, Target, Clock, Users, ArrowRight } from 'lucide-react';
+import { PlayCircle, CheckCircle2, BarChart, Target, Clock, Users, ArrowRight, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import './IntervistaAI.css';
@@ -21,8 +21,9 @@ const IntervistaAI = () => {
               Transform your assessment process with deep behavioral analytics, automated screening, and data-driven candidate match-scoring.
             </p>
             <div className="int-hero-actions mb-12">
-              <Link to="/intervista-ai"><Button icon={<span style={{fontSize: '18px'}}>✨</span>} iconPosition="right">Launch Intervista</Button></Link>
-              <Link to="/intervista-ai"><Button variant="outline" icon={<PlayCircle size={18} />} iconPosition="right">Book Demo</Button></Link>
+              <a href="https://intervista.in" target="_blank" rel="noopener noreferrer">
+                <Button icon={<span style={{fontSize: '18px'}}>✨</span>} iconPosition="right">Launch Intervista</Button>
+              </a>
             </div>
             
             <div className="trusted-by">
@@ -59,7 +60,7 @@ const IntervistaAI = () => {
                 <li><CheckCircle2 size={18} className="text-primary" /> Enterprise-wide interview standardisation</li>
                 <li><CheckCircle2 size={18} className="text-primary" /> Real-time candidate sentiment analysis</li>
               </ul>
-              <Link to="/hire-trainers"><Button className="w-full" icon={<ArrowRight size={18} />} iconPosition="right">Explore Hiring Solutions</Button></Link>
+              <Link to="/contact-us"><Button className="w-full" icon={<ArrowRight size={18} />} iconPosition="right">Explore Hiring Solutions</Button></Link>
             </div>
 
             <div className="target-card bg-white" style={{ borderTop: '4px solid #cbd5e1' }}>
@@ -71,7 +72,19 @@ const IntervistaAI = () => {
                 <li><CheckCircle2 size={18} className="text-muted" /> Behavioral coaching & score tracking</li>
                 <li><CheckCircle2 size={18} className="text-muted" /> Industry-specific interview simulations</li>
               </ul>
-              <Link to="/intervista-ai"><Button variant="outline" className="w-full text-muted" style={{ borderColor: '#cbd5e1' }} icon={<ArrowRight size={18} />} iconPosition="right">Practice Mock Interviews</Button></Link>
+              <Link to="/contact-us"><Button variant="outline" className="w-full text-muted" style={{ borderColor: '#cbd5e1' }} icon={<ArrowRight size={18} />} iconPosition="right">Practice Mock Interviews</Button></Link>
+            </div>
+
+            <div className="target-card bg-white" style={{ borderTop: '4px solid #2563eb' }}>
+              <div className="target-icon bg-secondary text-primary"><GraduationCap size={24} /></div>
+              <h3>For College Placement Services</h3>
+              <ul className="target-features mb-8">
+                <li><CheckCircle2 size={18} className="text-primary" /> Institutional campus placement readiness drills</li>
+                <li><CheckCircle2 size={18} className="text-primary" /> Comprehensive student employability scoring & reports</li>
+                <li><CheckCircle2 size={18} className="text-primary" /> Large-scale AI proctored mock interview drives</li>
+                <li><CheckCircle2 size={18} className="text-primary" /> Tailored preparation for top IT, BFSI & Core recruiters</li>
+              </ul>
+              <Link to="/contact-us"><Button className="w-full" icon={<ArrowRight size={18} />} iconPosition="right">Partner with Us</Button></Link>
             </div>
           </div>
         </div>
@@ -92,12 +105,12 @@ const IntervistaAI = () => {
               <p className="stat-label">ACCURACY RATE</p>
             </div>
             <div className="int-stat-item bg-white">
-              <div className="stat-icon-small text-primary"><Clock size={20} /></div>
+              <Clock size={20} className="stat-icon-small text-primary" />
               <h3 className="stat-number">65%</h3>
               <p className="stat-label">TIME SAVED</p>
             </div>
             <div className="int-stat-item bg-white">
-              <div className="stat-icon-small text-primary"><Users size={20} /></div>
+              <Users size={20} className="stat-icon-small text-primary" />
               <h3 className="stat-number">500+</h3>
               <p className="stat-label">VERIFIED TRAINERS</p>
             </div>
@@ -114,7 +127,9 @@ const IntervistaAI = () => {
               Join thousands of companies and professionals using Intervista to redefine the standard of modern interviewing.
             </p>
             <div className="int-cta-actions">
-              <Link to="/intervista-ai"><Button>Launch Intervista Now</Button></Link>
+              <a href="https://intervista.in" target="_blank" rel="noopener noreferrer">
+                <Button>Launch Intervista Now</Button>
+              </a>
               <div className="int-cta-socialProof">
                 <div className="avatars-small">
                   <div className="avatar-sm bg-muted"></div>
