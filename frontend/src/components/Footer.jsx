@@ -75,8 +75,7 @@ const Footer = () => {
               <h4 className="footer-heading">Connect</h4>
               <ul className="contact-info" style={{ marginBottom: '1rem', listStyle: 'none', padding: 0 }}>
                 <li>Email: <a href="mailto:support@blazetechsolutions.in">support@blazetechsolutions.in</a></li>
-                <li>Primary: <a href="tel:+918438860377">+91 84388 60377</a></li>
-                <li>Secondary: <a href="tel:+918870006308">+91 88700 06308</a></li>
+                <li>Phone: <a href="tel:+918438860377">+91 84388 60377</a></li>
                 <li>WhatsApp: <a href="https://wa.me/918438860377">+91 84388 60377</a></li>
               </ul>
               <div className="social-links" style={{ display: 'flex', gap: '1rem' }}>

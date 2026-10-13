@@ -130,18 +130,8 @@ const ContactUs = () => {
                     <Phone size={22} />
                   </div>
                   <div>
-                    <span className="info-label">Primary Number</span>
+                    <span className="info-label">Phone Number</span>
                     <a href="tel:+918438860377" className="info-value">+91 84388 60377</a>
-                  </div>
-                </div>
-
-                <div className="info-item">
-                  <div className="info-icon-wrapper">
-                    <Phone size={22} />
-                  </div>
-                  <div>
-                    <span className="info-label">Secondary Number</span>
-                    <a href="tel:+918870006308" className="info-value">+91 88700 06308</a>
                   </div>
                 </div>
 
@@ -249,7 +239,7 @@ const ContactUs = () => {
                           required
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="+91 8870006308"
+                          placeholder="+91 84388 60377"
                           className="form-input"
                         />
                       </div>

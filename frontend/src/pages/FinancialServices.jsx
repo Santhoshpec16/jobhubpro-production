@@ -394,7 +394,7 @@ const FinancialServices = () => {
           <div className="fs-contact-card text-center">
             <h2 className="fs-contact-title">Need Financial Assistance or Virtual CFO Advisory?</h2>
             <p className="fs-contact-subtitle">
-              For queries reach out at <strong>+91 84388 60377</strong> / <strong>+91 88700 06308</strong> or email <strong>support@blazetechsolutions.in</strong>
+              For queries reach out at <strong>+91 84388 60377</strong> or email <strong>support@blazetechsolutions.in</strong>
             </p>
 
             <div className="fs-contact-buttons">

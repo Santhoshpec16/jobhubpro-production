@@ -349,11 +349,11 @@ const TrainingSolutions = () => {
             For enquiries, call or WhatsApp us directly at
           </p>
           <div className="ts-enquiry-contact-box">
-            <a href="tel:+918870006308" className="ts-enquiry-btn phone-btn">
-              <Phone size={20} /> Call +91 8870006308
+            <a href="tel:+918438860377" className="ts-enquiry-btn phone-btn">
+              <Phone size={20} /> Call +91 84388 60377
             </a>
-            <a href="https://wa.me/918870006308" target="_blank" rel="noopener noreferrer" className="ts-enquiry-btn whatsapp-btn">
-              <MessageCircle size={20} /> WhatsApp +91 8870006308
+            <a href="https://wa.me/918438860377" target="_blank" rel="noopener noreferrer" className="ts-enquiry-btn whatsapp-btn">
+              <MessageCircle size={20} /> WhatsApp +91 84388 60377
             </a>
           </div>
         </div>
@@ -408,7 +408,7 @@ const TrainingSolutions = () => {
                       value={formData.phone}
                       onChange={handleFormChange}
                       className="form-control"
-                      placeholder="+91 8870006308"
+                      placeholder="+91 84388 60377"
                     />
                   </div>
 

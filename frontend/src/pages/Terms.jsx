@@ -68,8 +68,8 @@ const Terms = () => {
             <h2>12. Contact Information</h2>
             <p>If you have any questions regarding these Terms, please contact us:</p>
             <ul>
-              <li><strong>Email:</strong> support@blazetechsolutions.com</li>
-              <li><strong>WhatsApp:</strong> +91 8870006308</li>
+              <li><strong>Email:</strong> support@blazetechsolutions.in</li>
+              <li><strong>WhatsApp:</strong> +91 84388 60377</li>
             </ul>
           </section>
         </div>

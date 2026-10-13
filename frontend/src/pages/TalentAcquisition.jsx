@@ -285,13 +285,13 @@ const TalentAcquisition = () => {
         <div className="container">
           <div className="ta-contact-box">
             <h2>Ready to Build Your Next High-Performing Team?</h2>
-            <p>For recruitment queries, reach out at <strong>+91 8870006308</strong> or email <strong>support@blazetechsolutions.in</strong></p>
+            <p>For recruitment queries, reach out at <strong>+91 84388 60377</strong> or email <strong>support@blazetechsolutions.in</strong></p>
             
             <div className="ta-contact-btns mt-6">
-              <a href="tel:+918870006308" className="btn-ta-contact phone">
-                <Phone size={18} /> Call +91 8870006308
+              <a href="tel:+918438860377" className="btn-ta-contact phone">
+                <Phone size={18} /> Call +91 84388 60377
               </a>
-              <a href="https://wa.me/918870006308" target="_blank" rel="noopener noreferrer" className="btn-ta-contact whatsapp">
+              <a href="https://wa.me/918438860377" target="_blank" rel="noopener noreferrer" className="btn-ta-contact whatsapp">
                 <MessageCircle size={18} /> WhatsApp Us
               </a>
               <a href="mailto:support@blazetechsolutions.in" className="btn-ta-contact email">
@@ -351,7 +351,7 @@ const TalentAcquisition = () => {
                       value={formData.phone} 
                       onChange={handleFormChange} 
                       className="form-control" 
-                      placeholder="+91 8870006308" 
+                      placeholder="+91 84388 60377" 
                     />
                   </div>
 
